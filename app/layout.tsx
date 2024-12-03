@@ -1,16 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { IChildren } from "@/types";
+import { Toaster } from "sonner";
+import { Providers } from "@/contexts";
 
 export const metadata: Metadata = {
-  title: "Gym Class Scheduling and Membership Management System Task",
+  title: "GymSync",
 };
 
 const RootLayout = ({ children }: Readonly<IChildren>) => {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body>
+          {children}
+          <Toaster />
+        </body>
+      </html>
+    </Providers>
   );
 };
 
